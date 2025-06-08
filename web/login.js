@@ -29,7 +29,6 @@ function login() {
     const password = document.getElementById("password").value;
 
     if (username && password) {
-        // Add your login logic here
         console.log('Logging in with:', { username, password });
         fetch("auth", {
                 method: "POST",
