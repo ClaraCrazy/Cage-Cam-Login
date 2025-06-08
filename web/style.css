@@ -1,0 +1,255 @@
+/* Center the login-div on the screen */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #8c59b3;
+    margin: 0;
+    background-color: #4a3450c2;
+    background-image: url("assets/background.png");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    font-family: 'Lucida Console', monospace;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-div {
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout */
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4a3450c2;
+    border: 1px solid #3e4446;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    width: 630px;
+    gap: 20px;
+    /* Space between header and inputs */
+}
+
+
+/* Style the header section */
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 5%;
+    /* Stack image and text vertically */
+    align-items: center;
+    /* Center content horizontally */
+    justify-content: center;
+    /* Center content vertically */
+    width: 40%;
+    /* Adjust width for horizontal layout */
+    text-align: center;
+}
+
+.header img {
+    margin: auto;
+}
+
+.header b {
+    font-size: 12px;
+    color: #cacaca;
+}
+
+
+/* Style the inputs section */
+
+.inputs {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #3e4446;
+    /* Divider for horizontal layout */
+}
+
+.login-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.login-input b {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.login-input input {
+    background-color: #2d1e31c2;
+    color: #cacaca;
+    padding: 10px;
+    border: 1px solid #3e4446;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/* Style the button */
+
+.login-btn {
+    padding: 10px;
+    background-color: #7518bd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #8542b8;
+}
+
+.login-btn:disabled {
+    background-color: #2d1e31c2;
+    cursor: not-allowed;
+}
+
+
+/* Style the footer */
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #cacaca;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    background-color: #2d1e31c2;
+    border: 1px solid #3e4446;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #7518bd;
+    border: 1px solid #7518bd;
+}
+
+.inline {
+    display: flex;
+}
+
+label[id="terms"] {
+    margin-top: 4px;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✓";
+    font-size: 24px;
+    bottom: -5px;
+    position: absolute;
+    border-width: 0 3px 3px 0;
+}
+
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    display: none;
+    position: absolute;
+    background-color: #4a3450f6;
+    border: 1px solid #3e4446;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    right: -30%;
+    width: 640px;
+}
+
+.hover-tos {
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-tos:hover .form-popup {
+    display: block;
+}
+
+
+/* Mobile optimization */
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+        /* Prevent scrolling on mobile */
+        background-position: center;
+        background-size: cover;
+    }
+    .login-div {
+        flex-direction: column;
+        /* Switch to vertical layout */
+        width: 90%;
+        /* Adjust width for smaller screens */
+        padding: 15px;
+        gap: 10px;
+        /* Reduce spacing */
+    }
+    .header {
+        top: 0%;
+        width: 100%;
+        /* Full width for vertical layout */
+        text-align: center;
+        /* Ensure text alignment */
+    }
+    .form-popup {
+        display: none;
+        position: fixed;
+        background-color: #4a3450f6;
+        border: 1px solid #3e4446;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        width: 90%;
+        /* Match login-div width */
+        max-height: 80vh;
+        /* Limit height */
+        overflow-y: auto;
+        /* Enable scrolling inside popup */
+        word-wrap: break-word;
+        /* Prevent layout breaking */
+        top: 50%;
+        /* Center vertically */
+        left: 50%;
+        /* Center horizontally */
+        transform: translate(-50%, -50%);
+    }
+    .inputs {
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid #3e4446;
+        /* Remove left border for vertical layout */
+    }
+    body.popup-open {
+        overflow: hidden;
+        /* Prevent scrolling when popup is open */
+    }
+    .hover-tos:hover .form-popup {
+        display: block;
+    }
+}

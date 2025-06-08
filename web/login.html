@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Cage Cam</title>
+    <script src="login.js" defer></script>
+    <meta property="og:title" content="Login - Cage Cam">
+    <meta property="og:description" content="Please sign in to continue">
+    <meta property="og:image" content="https://cage.cam/assets/cage.png">
+    <link rel="icon" href="assets/cage.png" type="image/png">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="disableSubmit()">
+    <div class="login-div">
+        <div class="header">
+            <img src="assets/cage.png" />
+            <b>Please protect me from the monsters in my brain, I'm scared...</b>
+        </div>
+        <div class="inputs">
+            <form id="login-form">
+                <h2 style="text-align: center">Authorization required!</h2>
+                <div class="login-input">
+                    <b> Username </b>
+                    <input id="username" required autocomplete="on" placeholder="Username" />
+                </div>
+                <div class="login-input">
+                    <b> Password </b>
+                    <input id="password" required type="password" autocomplete="on" placeholder="**********" />
+                </div>
+                <div class="inline">
+                    <input id="terms" class="terms" type="checkbox" name="terms" value="terms" onchange="activateButton(this)" />
+                    <label id="terms">
+                        I accept the 
+                        <u class="hover-tos">Terms of Service
+                            <div class="form-popup">
+                                <form class="form-container">
+                                    <h3>Terms of Service:</h3>
+                                    <p>Unauthorized access or use may constitute a violation of German law, particularly the Strafgesetzbuch (StGB) and Bundesdatenschutzgesetz (BDSG), and may result in civil or criminal penalties.</p>
+                                    <b>Recording, streaming, screen capturing, redistributing, or reproducing any content from this page—wholly or in part—is strictly prohibited under applicable copyright and data protection laws.</b>
+                                    <p>By accessing or using this page, you confirm that you are authorized to do so and agree to comply with all relevant laws and regulations of the Federal Republic of Germany, including those specific to the Free State of Bavaria.</p>
+                                </form>
+                            </div>
+                        </u>
+                    </label>
+                </div>
+                <br />
+                <button type="submit" class="login-btn" id="submit" onclick="login()">
+                    Log In
+                </button>
+            </form>
+            <div class="footer">
+                <b>© CyberFeline - All rights reserved</b>
+            </div>
+        </div>
+    </div>
+</body>
