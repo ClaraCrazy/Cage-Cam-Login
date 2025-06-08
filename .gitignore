@@ -3,5 +3,6 @@ node_modules/
 
 # Ignore htpasswd file
 htpasswd
+
 # Ignore package-lock.json file
 package-lock.json
