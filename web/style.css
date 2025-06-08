@@ -195,7 +195,6 @@ input[type="checkbox"]:checked::after {
 
 @media (max-width: 768px) {
     body {
-        overflow: hidden;
         /* Prevent scrolling on mobile */
         background-position: center;
         background-size: cover;
