@@ -191,6 +191,40 @@ input[type="checkbox"]:checked::after {
 }
 
 
+/* Floating GitHub icon */
+
+.github-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    /* Reduce size */
+    height: 40px;
+    /* Reduce size */
+    opacity: 0.8;
+    /* Semi-transparent */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1100;
+    /* Ensure it floats above other elements */
+}
+
+.github-link img {
+    width: 100%;
+    /* Ensure the image fits within the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image is displayed */
+}
+
+.github-link:hover {
+    opacity: 1;
+    /* Fully visible on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+}
+
+
 /* Mobile optimization */
 
 @media (max-width: 768px) {
