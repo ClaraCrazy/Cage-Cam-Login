@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     color: #8c59b3;
     margin: 0;
-    background-color: #4a3450c2;
+    background-color: #261b29c2;
     background-image: url("assets/background.png");
     background-repeat: no-repeat;
     background-position: 0% 0%;
@@ -33,8 +33,8 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding: 20px;
-    background-color: #4a3450c2;
-    border: 1px solid #3e4446;
+    background-color: #261b29c2;
+    border: 1px solid #766e61;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
     width: 630px;
@@ -76,7 +76,7 @@ body {
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    border-left: 2px solid #3e4446;
+    border-left: 2px solid #766e61;
     /* Divider for horizontal layout */
 }
 
@@ -92,10 +92,10 @@ body {
 }
 
 .login-input input {
-    background-color: #2d1e31c2;
+    background-color: #261b29c2;
     color: #cacaca;
     padding: 10px;
-    border: 1px solid #3e4446;
+    border: 1px solid #766e61;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -106,6 +106,7 @@ body {
 .login-btn {
     padding: 10px;
     background-color: #7518bd;
+    border: 1px solid #766e61;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -119,7 +120,8 @@ body {
 }
 
 .login-btn:disabled {
-    background-color: #2d1e31c2;
+    background-color: #261b29c2;
+    border: 1px solid #766e61;
     cursor: not-allowed;
 }
 
@@ -137,8 +139,8 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
     appearance: none;
-    background-color: #2d1e31c2;
-    border: 1px solid #3e4446;
+    background-color: #261b29c2;
+    border: 1px solid #766e61;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
@@ -171,8 +173,8 @@ input[type="checkbox"]:checked::after {
 .form-popup {
     display: none;
     position: absolute;
-    background-color: #4a3450f6;
-    border: 1px solid #3e4446;
+    background-color: #261b29c2;
+    border: 1px solid #766e61;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -252,8 +254,8 @@ input[type="checkbox"]:checked::after {
     .form-popup {
         display: none;
         position: fixed;
-        background-color: #4a3450f6;
-        border: 1px solid #3e4446;
+        background-color: #261b29c2;
+        border: 1px solid #766e61;
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -275,7 +277,7 @@ input[type="checkbox"]:checked::after {
     .inputs {
         padding-left: 0;
         border-left: none;
-        border-top: 2px solid #3e4446;
+        border-top: 2px solid #766e61;
         /* Remove left border for vertical layout */
     }
     body.popup-open {
