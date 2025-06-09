@@ -25,8 +25,8 @@ A cozy and secure login page for my cage-cam.
 
 2. **Edit the login page**
 
-   * Open `index.html` and tweak the header, logo, or inputs.
-   * Adjust `web/style.css` for colors and fonts.
+   * Open `login.html` and tweak the logo and inputs.
+   * Adjust `style.css` for colors and fonts.
 
 3. **Integrate**
 
