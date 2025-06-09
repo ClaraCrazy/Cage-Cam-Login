@@ -1,35 +1,42 @@
+// Disable the submit button initially
 function disableSubmit() {
     document.getElementById("submit").disabled = true;
 }
 
-function activateButton(element) {
-    if (element.checked) {
-        document.getElementById("submit").disabled = false;
-    } else {
-        document.getElementById("submit").disabled = true;
-    }
+// Function to check if all conditions are met
+function checkInputs() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const termsChecked = document.getElementById('terms').checked;
+    const submitButton = document.getElementById('submit');
+
+    // Enable the button only if both fields are filled and the checkbox is checked
+    submitButton.disabled = !(username && password && termsChecked);
 }
 
-// Get the input field
-var input = document.getElementById("password");
-
-// Execute a function when the user presses a key on the keyboard
-input.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
+// Add event listener to toggle the checkbox when "Enter" is pressed
+document.getElementById("terms").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        // Cancel the default action, if needed
         event.preventDefault();
-        // Trigger the button element with a click
+        this.checked = !this.checked; // Toggle the checkbox state
+        checkInputs(); // Update the submit button state
+    }
+});
+
+document.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
         document.getElementById("submit").click();
     }
 });
 
+// Login function
 function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     if (username && password) {
-        console.log('Logging in with:', { username, password });
+        console.log('Logging in:', { username, password });
         fetch("auth", {
                 method: "POST",
                 headers: {
@@ -40,14 +47,15 @@ function login() {
                     password: password,
                 }),
                 credentials: "include",
+                mode: "cors", // Enable CORS
             })
             .then((response) => {
                 if (response.ok) {
-                    // Redirect on successful login
                     window.location.href = "/stream";
                 } else {
-                    // Handle login failure
-                    alert("Login failed: " + response.status);
+                    response.text().then((text) => {
+                        alert("Login failed: " + text);
+                    });
                 }
             })
             .catch((error) => {
@@ -57,5 +65,12 @@ function login() {
     } else {
         alert('Please fill out all fields.');
     }
-
 }
+
+// Add event listeners to monitor changes in the input fields and checkbox
+document.getElementById('username').addEventListener('input', checkInputs);
+document.getElementById('password').addEventListener('input', checkInputs);
+document.getElementById('terms').addEventListener('change', checkInputs);
+
+// Disable the submit button on page load
+document.addEventListener('DOMContentLoaded', disableSubmit);
