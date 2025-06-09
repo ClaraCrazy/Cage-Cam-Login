@@ -39,15 +39,6 @@ A cozy and secure login page for my cage-cam.
 
 ---
 
-## 🎨 Customization Ideas
-
-* Swap in your own plushie‑themed background
-* Translate ToS or add localization
-* Add extra form fields (e.g., device ID, multi‑factor auth)
-* Animate the plushies with CSS hover effects
-
----
-
 ## ❤️ Support me
 
 <!--
