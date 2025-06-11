@@ -67,9 +67,3 @@ Pwease support me >.<
 \*\* Please make sure to select *Friends and Family*<br><br>
 **Thanks for all your support <3**
 
----
-
-## Got Feedback?
-
-Got wild ideas, cute bugs, or need help? Raise an issue or slide into my DMs — let’s make this the fluffiest, safest login around!
-
