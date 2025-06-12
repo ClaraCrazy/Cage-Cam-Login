@@ -172,7 +172,6 @@ label[id="terms"] {
 .hover-tos:hover .form-popup {
     display: block;
     right: -25%;
-    /* Ensure consistent positioning */
 }
 
 .github-link {
