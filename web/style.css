@@ -1,4 +1,12 @@
-/* Center the login-div on the screen */
+:root {
+    --primary-color: #8c59b3;
+    --background-color: #1e1621c2;
+    --border-color: #766e61;
+    --text-color: #cacaca;
+    --button-hover-color: #8542b8;
+    --button-color: #7518bd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
 
 body {
     display: flex;
@@ -6,13 +14,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #8c59b3;
     margin: 0;
-    background-color: #261b29c2;
-    background-image: url("assets/background.png");
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    background-size: 100% 100%;
+    color: var(--primary-color);
+    background: var(--background-color) url("assets/background.png") no-repeat 0% 0% / 100% 100%;
     font-family: 'Lucida Console', monospace;
 }
 
@@ -29,34 +33,25 @@ body {
     animation: fadeIn 1s ease-in-out;
     display: flex;
     flex-direction: row;
-    /* Horizontal layout */
     align-items: flex-start;
     justify-content: center;
     padding: 20px;
-    background-color: #261b29c2;
-    border: 1px solid #766e61;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    box-shadow: var(--shadow-color) 0px 4px 6px;
     width: 630px;
     gap: 20px;
-    /* Space between header and inputs */
 }
-
-
-/* Style the header section */
 
 .header {
     position: relative;
     display: flex;
     flex-direction: column;
     top: 5%;
-    /* Stack image and text vertically */
     align-items: center;
-    /* Center content horizontally */
     justify-content: center;
-    /* Center content vertically */
     width: 40%;
-    /* Adjust width for horizontal layout */
     text-align: center;
 }
 
@@ -66,18 +61,14 @@ body {
 
 .header b {
     font-size: 12px;
-    color: #cacaca;
+    color: var(--text-color);
 }
-
-
-/* Style the inputs section */
 
 .inputs {
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    border-left: 2px solid #766e61;
-    /* Divider for horizontal layout */
+    border-left: 2px solid var(--border-color);
 }
 
 .login-input {
@@ -92,23 +83,19 @@ body {
 }
 
 .login-input input {
-    background-color: #261b29c2;
-    color: #cacaca;
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 10px;
-    border: 1px solid #766e61;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 14px;
 }
 
-
-/* Style the button */
-
 .login-btn {
     padding: 10px;
-    background-color: #7518bd;
-    border: 1px solid #766e61;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
     color: #fff;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
@@ -116,39 +103,44 @@ body {
 }
 
 .login-btn:hover {
-    background-color: #8542b8;
+    background-color: var(--button-hover-color);
 }
 
 .login-btn:disabled {
-    background-color: #261b29c2;
-    border: 1px solid #766e61;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     cursor: not-allowed;
 }
-
-
-/* Style the footer */
 
 .footer {
     margin-top: 20px;
     font-size: 12px;
     text-align: center;
-    color: #cacaca;
+    color: var(--text-color);
 }
 
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
     appearance: none;
-    background-color: #261b29c2;
-    border: 1px solid #766e61;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     cursor: pointer;
     position: relative;
 }
 
 input[type="checkbox"]:checked {
-    background-color: #7518bd;
-    border: 1px solid #766e61;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
+}
+
+input[type="checkbox"]:checked::after {
+    color: var(--text-color);
+    content: "✓";
+    font-size: 24px;
+    bottom: -5px;
+    position: absolute;
 }
 
 .inline {
@@ -159,26 +151,14 @@ label[id="terms"] {
     margin-top: 4px;
 }
 
-input[type="checkbox"]:checked::after {
-    color: #cacaca;
-    content: "✓";
-    font-size: 24px;
-    bottom: -5px;
-    position: absolute;
-    border-width: 0 3px 3px 0;
-}
-
-
-/* The popup form - hidden by default */
-
 .form-popup {
     display: none;
     position: absolute;
-    background-color: #261b29de;
-    border: 1px solid #766e61;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-color) 0px 4px 6px;
     z-index: 1000;
     right: -30%;
     width: 640px;
@@ -193,113 +173,78 @@ input[type="checkbox"]:checked::after {
     display: block;
 }
 
-
-/* Floating GitHub icon for desktop */
-
 .github-link {
     position: fixed;
-    /* Keep it fixed to the viewport */
     bottom: 20px;
-    /* Position it near the bottom */
     right: 20px;
-    /* Align it to the right */
     width: 40px;
-    /* Icon size */
     height: 40px;
     opacity: 0.8;
-    /* Semi-transparent */
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1100;
-    /* Ensure it floats above other elements */
 }
 
 .github-link img {
     width: 100%;
-    /* Ensure the image fits within the container */
     height: auto;
-    /* Maintain aspect ratio */
     display: block;
-    /* Ensure the image is displayed */
 }
 
 .github-link:hover {
     opacity: 1;
-    /* Fully visible on hover */
     transform: scale(1.1);
-    /* Slightly enlarge on hover */
 }
-
-
-/* Mobile optimization */
 
 @media (max-width: 768px) {
     body {
-        /* Prevent scrolling on mobile */
         background-position: center;
         background-size: cover;
     }
     .login-div {
         flex-direction: column;
-        /* Switch to vertical layout */
         width: 90%;
-        /* Adjust width for smaller screens */
         padding: 15px;
         gap: 10px;
-        /* Reduce spacing */
     }
     .header {
         top: 0%;
         width: 100%;
-        /* Full width for vertical layout */
         text-align: center;
-        /* Ensure text alignment */
     }
     .form-popup {
         display: none;
         position: fixed;
-        background-color: #261b29de;
-        border: 1px solid #766e61;
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-color) 0px 4px 6px;
         z-index: 1000;
         width: 90%;
-        /* Match login-div width */
         max-height: 80vh;
-        /* Limit height */
         overflow-y: auto;
-        /* Enable scrolling inside popup */
         word-wrap: break-word;
-        /* Prevent layout breaking */
         top: 50%;
-        /* Center vertically */
         left: 50%;
-        /* Center horizontally */
         transform: translate(-50%, -50%);
     }
     .inputs {
         width: 100%;
         padding-left: 0;
         border-left: none;
-        border-top: 2px solid #766e61;
-        /* Remove left border for vertical layout */
+        border-top: 2px solid var(--border-color);
     }
     body.popup-open {
         overflow: hidden;
-        /* Prevent scrolling when popup is open */
     }
     .hover-tos:hover .form-popup {
         display: block;
     }
     .github-link {
         bottom: 20px;
-        /* Keep it near the bottom */
         right: 20px;
-        /* Align it to the right */
         width: 50px;
-        /* Slightly larger for mobile */
         height: 50px;
         opacity: 0.9;
-        /* Slightly more visible */
     }
 }
