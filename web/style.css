@@ -151,7 +151,7 @@ label[id="terms"] {
     margin-top: 4px;
 }
 
-.form-popup {
+.tos-popup {
     display: none;
     position: absolute;
     background-color: var(--background-color);
@@ -169,7 +169,7 @@ label[id="terms"] {
     cursor: pointer;
 }
 
-.hover-tos:hover .form-popup {
+.hover-tos:hover .tos-popup {
     display: block;
     right: -25%;
 }
@@ -212,7 +212,7 @@ label[id="terms"] {
         width: 100%;
         text-align: center;
     }
-    .form-popup {
+    .tos-popup {
         display: none;
         position: fixed;
         background-color: var(--background-color);
@@ -238,7 +238,7 @@ label[id="terms"] {
     body.popup-open {
         overflow: hidden;
     }
-    .hover-tos:hover .form-popup {
+    .hover-tos:hover .tos-popup {
         display: block;
     }
     .github-link {
