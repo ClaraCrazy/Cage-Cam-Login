@@ -148,7 +148,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
     background-color: #7518bd;
-    border: 1px solid #7518bd;
+    border: 1px solid #766e61;
 }
 
 .inline {
