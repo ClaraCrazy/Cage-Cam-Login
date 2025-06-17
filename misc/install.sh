@@ -35,7 +35,7 @@ install_node() {
 setup_web_folder() {
     echo "Setting up web folder..."
     sudo mkdir -p /var/www/auth-page
-    sudo cp -r web/* /var/www/auth-page/
+    sudo cp -r frontend/* /var/www/auth-page/
     sudo chown -R www-data:www-data /var/www/auth-page
     echo "Web folder set up at /var/www/auth-page."
 }

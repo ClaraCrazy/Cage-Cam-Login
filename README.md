@@ -9,7 +9,7 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 
 ## 📦 What’s Inside
 
-* **`web/`** — Contains the frontend code:
+* **`frontend/`** — Contains the frontend code:
   - `login.html` — The login screen with username/password fields and a ToS checkbox.
   - `login.js` — Handles client-side logic for the login page.
   - `style.css` — Styles for the login page.
@@ -43,8 +43,8 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 
 2. **Edit the login page**
 
-   * Open the `web/` directory and tweak the logo and inputs.
-   * Adjust `web/style.css` for colors and fonts.
+   * Open the `frontend/` directory and tweak the logo and inputs.
+   * Adjust `frontend/style.css` for colors and fonts.
 
 <br>
 
