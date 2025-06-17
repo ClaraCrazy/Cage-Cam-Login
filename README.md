@@ -9,14 +9,14 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 
 ## 📦 What’s Inside
 
+* **`backend/`** — Contains the backend code:
+  - `server.js` — The main backend server file.
+  - `package.json` — Node.js dependencies and scripts.
+
 * **`frontend/`** — Contains the frontend code:
   - `login.html` — The login screen with username/password fields and a ToS checkbox.
   - `login.js` — Handles client-side logic for the login page.
   - `style.css` — Styles for the login page.
-
-* **`backend/`** — Contains the backend code:
-  - `server.js` — The main backend server file.
-  - `package.json` — Node.js dependencies and scripts.
 
 * **`misc/`** — Misc scripts and example files:
   - `htpassword-gen.js` — HTPassword script for user generation.
