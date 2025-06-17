@@ -16,13 +16,12 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 
 * **`backend/`** — Contains the backend code:
   - `server.js` — The main backend server file.
-  - `.env.example` — Example environment configuration file.
-  - `.htpassword` — File for storing hashed user credentials.
   - `package.json` — Node.js dependencies and scripts.
 
-* **`misc/`** — Documentation files:
-  - `htpassword-gen-test.js` — HTPassword test script for user generation.
+* **`misc/`** — Misc scripts and example files:
+  - `htpassword-gen.js` — HTPassword script for user generation.
   - `install.sh` — Automatic setup script.
+  - `env.example` — Example environment configuration file.
   - `auth-nginx.example` — NGINX Example config
   - `systemd.service.example` — Systemd example service.
 
@@ -61,7 +60,7 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
    # Install dependencies:
    npm install
 
-   # Configure environment variables in `backend/.env`.
+   # Configure environment variables in `misc/env.example` and move them to `backend/.env`.
    ```
 
 4. **Run the backend**

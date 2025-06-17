@@ -44,14 +44,15 @@ setup_web_folder() {
 setup_backend_folder() {
     echo "Setting up backend folder..."
     sudo mkdir -p /opt/auth-page-backend
-    sudo cp -r backend/* /opt/auth-page-backend/
-    echo "Backend folder set up at /opt/auth-page-backend."
+    sudo cp -r backend/* /opt/auth-backend/
+    sudo cp misc/env.example /opt/auth-backend/.env.example
+    echo "Backend folder set up at /opt/auth-backend."
 }
 
 # Install backend dependencies
 install_backend_dependencies() {
     echo "Installing backend dependencies..."
-    cd /opt/auth-page-backend
+    cd /opt/auth-backend
     npm install
     echo "Backend dependencies installed."
 }
