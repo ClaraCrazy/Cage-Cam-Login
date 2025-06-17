@@ -3,7 +3,14 @@ const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const httpProxy = require("http-proxy");
+// load .env file
+require("dotenv").config();
 
+// Load environment variables
+const htpasswdLocation = process.env.HTPASSWD_LOCATION || "./htpasswd";
+const authTarget = process.env.AUTH_TARGET || "http://localhost:8083";
+
+// Function to load users from htpasswd file
 function loadHtpasswd(filepath) {
     const lines = fs.readFileSync(filepath, "utf-8").split("\n").filter(Boolean);
     const users = {};
@@ -18,8 +25,8 @@ function verifyPassword(password, hash) {
     return bcrypt.compareSync(password, hash);
 }
 
-const users = loadHtpasswd("./htpasswd");
-const proxy = httpProxy.createProxyServer({ target: "http://localhost:8083" });
+const users = loadHtpasswd(htpasswdLocation);
+const proxy = httpProxy.createProxyServer({ target: authTarget });
 
 const server = http.createServer((req, res) => {
     try {
@@ -71,7 +78,7 @@ const server = http.createServer((req, res) => {
                 const decoded = jwt.verify(token, "secret_key");
                 console.log("Token validated for user:", decoded.username);
 
-                // Proxy the request to localhost:8083
+                // Proxy the request to the target
                 proxy.web(req, res, (err) => {
                     console.error("Proxy error:", err);
                     res.writeHead(500);
@@ -105,7 +112,7 @@ server.on("upgrade", (req, socket, head) => {
             const decoded = jwt.verify(token, "secret_key");
             console.log("WebSocket token validated for user:", decoded.username);
 
-            // Proxy the WebSocket connection to localhost:8083
+            // Proxy the WebSocket connection to the target
             proxy.ws(req, socket, head, (err) => {
                 console.error("WebSocket proxy error:", err);
                 socket.destroy();

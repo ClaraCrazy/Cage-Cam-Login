@@ -8,9 +8,24 @@ A cozy and secure login page for my cage-cam.
 
 ## 📦 What’s Inside
 
-* **`web/`** — The login screen with username/password fields and a ToS checkbox.
-* **`backend/`** — Sleek backend code to match the rest.
-* **`test.js`** — User creation test script.
+* **`web/`** — Contains the frontend code:
+  - `login.html` — The login screen with username/password fields and a ToS checkbox.
+  - `login.js` — Handles client-side logic for the login page.
+  - `style.css` — Styles for the login page.
+
+* **`backend/`** — Contains the backend code:
+  - `server.js` — The main backend server file.
+  - `.env.example` — Example environment configuration file.
+  - `.htpassword` — File for storing hashed user credentials.
+  - `package.json` — Node.js dependencies and scripts.
+
+* **`misc/`** — Documentation files:
+  - `htpassword-gen-test.js` — HTPassword test script for user generation.
+  - `install.sh` — Automatic setup script.
+  - `systemd.service.example` — Systemd example service.
+
+* **Root Files**:
+  - `README.md` — Project documentation.
 
 ---
 
@@ -25,17 +40,41 @@ A cozy and secure login page for my cage-cam.
 
 2. **Edit the login page**
 
-   * Open `login.html` and tweak the logo and inputs.
-   * Adjust `style.css` for colors and fonts.
+   * Open the `web/` directory and tweak the logo and inputs.
+   * Adjust `web/style.css` for colors and fonts.
 
-3. **Integrate**
+---
 
-   * Hook the form submission to your auth backend or embedded system.
+### Option 1: Manual Setup and Run
 
-4. **Deploy**
+3. **Set up the backend**
 
-   * Drop it on your server, Pi, or cage‑cam device.
-   * Serve via static host or web server.
+   ```bash
+   # Navigate to the `backend/` folder:
+   cd backend
+
+   # Install dependencies:
+   npm install
+
+   # Configure environment variables in `backend/.env`.
+   ```
+
+4. **Run the backend**
+
+   ```bash
+   # Start the backend server:
+   node server.js
+   ```
+
+---
+
+### Option 2: Automatic Install
+
+3. **Run the installation script**
+
+   ```bash
+   sudo bash install.sh
+   ```
 
 ---
 
