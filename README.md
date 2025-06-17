@@ -4,6 +4,7 @@
 
 A cozy and secure login page to be used with nginx, in this case for my cage-cam. 
 
+
 ---
 
 ## 📦 What’s Inside
@@ -28,6 +29,8 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 * **Root Files**:
   - `README.md` — Project documentation.
 
+<br>
+
 ---
 
 ## 🛠️ Getting Started
@@ -44,7 +47,8 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
    * Open the `web/` directory and tweak the logo and inputs.
    * Adjust `web/style.css` for colors and fonts.
 
----
+<br>
+
 
 ### Option 1: Manual Setup and Run
 
@@ -67,7 +71,8 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
    node server.js
    ```
 
----
+<br>
+
 
 ### Option 2: Automatic Install
 
@@ -76,6 +81,8 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
    ```bash
    sudo bash install.sh
    ```
+
+<br>
 
 ---
 
