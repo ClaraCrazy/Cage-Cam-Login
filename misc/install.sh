@@ -43,7 +43,7 @@ setup_web_folder() {
 # Copy the backend folder to /opt/auth-page-backend
 setup_backend_folder() {
     echo "Setting up backend folder..."
-    sudo mkdir -p /opt/auth-page-backend
+    sudo mkdir -p /opt/auth-backend
     sudo cp -r backend/* /opt/auth-backend/
     sudo cp misc/env.example /opt/auth-backend/.env.example
     echo "Backend folder set up at /opt/auth-backend."
@@ -66,6 +66,16 @@ setup_nginx_config() {
     echo "Nginx configuration set up and reloaded."
 }
 
+# Set up systemd service
+setup_systemd_service() {
+    echo "Setting up systemd service..."
+    sudo cp misc/systemd.service.example /etc/systemd/system/auth.service
+    sudo systemctl daemon-reload
+    sudo systemctl enable auth.service
+    sudo systemctl start auth.service
+    echo "Systemd service set up and started."
+}
+
 # Main script execution
 main() {
     echo "Starting setup process..."
@@ -84,6 +94,9 @@ main() {
 
     # Set up nginx configuration
     setup_nginx_config
+
+    # Set up systemd service
+    setup_systemd_service
 
     echo "Setup completed successfully."
 }
