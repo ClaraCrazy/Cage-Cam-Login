@@ -51,9 +51,18 @@ setup_backend_folder() {
 # Install backend dependencies
 install_backend_dependencies() {
     echo "Installing backend dependencies..."
-    cd /opt/backend
+    cd /opt/auth-page-backend
     npm install
     echo "Backend dependencies installed."
+}
+
+# Set up nginx configuration
+setup_nginx_config() {
+    echo "Setting up nginx configuration..."
+    sudo cp misc/auth-nginx.example /etc/nginx/sites-available/auth-nginx
+    sudo ln -sf /etc/nginx/sites-available/auth-nginx /etc/nginx/sites-enabled/auth-nginx
+    sudo nginx -t && sudo systemctl reload nginx
+    echo "Nginx configuration set up and reloaded."
 }
 
 # Main script execution
@@ -71,6 +80,9 @@ main() {
     setup_web_folder
     setup_backend_folder
     install_backend_dependencies
+
+    # Set up nginx configuration
+    setup_nginx_config
 
     echo "Setup completed successfully."
 }

@@ -1,8 +1,8 @@
-# 🐾 Cage‑Cam‑Login
+# 🐾 Simple-NGINX‑Login
 
 ![image](https://github.com/user-attachments/assets/58cf67e3-aae1-45c8-a4d3-c7c9f6cba84d)
 
-A cozy and secure login page for my cage-cam. 
+A cozy and secure login page to be used with nginx, in this case for my cage-cam. 
 
 ---
 
@@ -22,6 +22,7 @@ A cozy and secure login page for my cage-cam.
 * **`misc/`** — Documentation files:
   - `htpassword-gen-test.js` — HTPassword test script for user generation.
   - `install.sh` — Automatic setup script.
+  - `auth-nginx.example` — NGINX Example config
   - `systemd.service.example` — Systemd example service.
 
 * **Root Files**:
@@ -34,8 +35,8 @@ A cozy and secure login page for my cage-cam.
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/ClaraCrazy/Cage-Cam-Login.git
-   cd Cage-Cam-Login
+   git clone https://github.com/ClaraCrazy/Simple-Nginx-Login.git
+   cd Simple-Nginx-Login
    ```
 
 2. **Edit the login page**
