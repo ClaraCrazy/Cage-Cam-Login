@@ -1,6 +1,6 @@
 # 🐾 Simple-NGINX‑Login
 
-![image](https://github.com/user-attachments/assets/58cf67e3-aae1-45c8-a4d3-c7c9f6cba84d)
+![image](https://github.com/user-attachments/assets/9c90840e-704e-407b-9c90-a8f3c1fd699e)
 
 A cozy and secure login page to be used with nginx, in this case for my cage-cam. 
 
