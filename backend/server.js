@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
                     res.end("Invalid password");
                 }
             });
-        } else if (req.method === "GET" && req.url.startsWith("/stream")) {
+        } else if (req.method === "GET" && req.url.startsWith("/access")) {
             // Validate the token from the cookie
             const cookie = req.headers.cookie;
             if (!cookie || !cookie.includes("token=")) {
@@ -98,7 +98,7 @@ const server = http.createServer((req, res) => {
 
 // Handle WebSocket connections
 server.on("upgrade", (req, socket, head) => {
-    if (req.url.startsWith("/stream")) {
+    if (req.url.startsWith("/access")) {
         // Validate the token from the cookie
         const cookie = req.headers.cookie;
         if (!cookie || !cookie.includes("token=")) {

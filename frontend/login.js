@@ -51,7 +51,7 @@ function login() {
             })
             .then((response) => {
                 if (response.ok) {
-                    window.location.href = "/stream";
+                    window.location.href = "/access";
                 } else {
                     response.text().then((text) => {
                         alert("Login failed: " + text);

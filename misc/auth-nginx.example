@@ -1,7 +1,7 @@
 server {
         listen 443 ssl;
         include snippets/snakeoil.conf;
-        server_name cage.cam;
+        server_name login.example;
 
         root /var/www/auth-page/;
 
@@ -17,7 +17,7 @@ server {
                     proxy_set_header Connection "upgrade";
         }
 
-        location /stream {
+        location /access {
                 proxy_pass http://localhost:3000;
                 proxy_http_version 1.1;
                     proxy_set_header Upgrade $http_upgrade;
