@@ -102,7 +102,7 @@ server.on("upgrade", (req, socket, head) => {
         // Validate the token from the cookie
         const cookie = req.headers.cookie;
         if (!cookie || !cookie.includes("token=")) {
-            socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n");
+            socket.write("HTTP/1.2 401 Unauthorized\r\n\r\n");
             socket.destroy();
             return;
         }
@@ -118,11 +118,11 @@ server.on("upgrade", (req, socket, head) => {
                 socket.destroy();
             });
         } catch (err) {
-            socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n");
+            socket.write("HTTP/1.2 401 Unauthorized\r\n\r\n");
             socket.destroy();
         }
     } else {
-        socket.write("HTTP/1.1 404 Not Found\r\n\r\n");
+        socket.write("HTTP/1.2 404 Not Found\r\n\r\n");
         socket.destroy();
     }
 });
