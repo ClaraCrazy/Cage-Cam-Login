@@ -6,6 +6,10 @@
     --button-hover-color: #8542b8;
     --button-color: #7518bd;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --glow-color: rgba(140, 89, 179, 0.8);
+    /* strong purple */
+    --glow-dark-color: rgba(0, 0, 0, 0.8);
+    /* deep black shadow */
 }
 
 body {
@@ -29,8 +33,20 @@ body {
     }
 }
 
+@keyframes darkPulse {
+    0% {
+        box-shadow: 0 0 30px var(--glow-color), 0 0 10px var(--glow-dark-color), 0 0 60px var(--glow-color);
+    }
+    50% {
+        box-shadow: 0 0 45px var(--glow-color), 0 0 25px var(--glow-dark-color), 0 0 90px var(--glow-color);
+    }
+    100% {
+        box-shadow: 0 0 30px var(--glow-color), 0 0 10px var(--glow-dark-color), 0 0 60px var(--glow-color);
+    }
+}
+
 .login-window {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out, darkPulse 4s ease-in-out infinite;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -39,7 +55,7 @@ body {
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    box-shadow: var(--shadow-color) 0px 4px 6px;
+    box-shadow: 0 0 45px var(--glow-color), 0 0 25px var(--glow-dark-color), 0 0 90px var(--glow-color);
     width: 630px;
     gap: 20px;
 }
@@ -100,16 +116,20 @@ body {
     cursor: pointer;
     font-size: 14px;
     width: 100%;
+    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .login-btn:hover {
     background-color: var(--button-hover-color);
+    box-shadow: 0 0 25px var(--glow-color), 0 0 50px var(--glow-color);
 }
 
 .login-btn:disabled {
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 .footer {
@@ -174,21 +194,38 @@ label[id="terms"] {
     right: -25%;
 }
 
+@keyframes ping {
+    0% {
+        box-shadow: 0 0 0 0 rgba(140, 89, 179, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(140, 89, 179, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(140, 89, 179, 0);
+    }
+}
+
 .github-link {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
     z-index: 1100;
+    animation: ping 2.5s infinite;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: transform 0.3s ease;
 }
 
 .github-link img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    filter: drop-shadow(0 0 2px rgba(140, 89, 179, 0.6));
+    transition: filter 0.3s ease;
 }
 
 .github-link:hover {
