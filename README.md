@@ -43,7 +43,7 @@ A cozy and secure login page to be used with nginx, in this case for my cage-cam
 
 2. **Edit the login page**
 
-   * Open the `frontend/` directory and tweak the logo and inputs.
+   * Open the `frontend/` directory, replace the logo and tweak the text of `login.html` at `L5-7` & `L18`.
    * Adjust `frontend/style.css` for colors and fonts.
 
 <br>
